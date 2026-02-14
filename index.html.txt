@@ -118,8 +118,8 @@ button:hover{
 
         <div class="fotos">
             <!-- Cuando quieras, reemplaza las imágenes por las de ustedes -->
-            <img src="https://via.placeholder.com/300x400.png?text=Nosotros+1">
-            <img src="https://via.placeholder.com/300x400.png?text=Nosotros+2">
+            <img src="foto1.jpg.png">
+            <img src="foto2.jpg.png">
         </div>
 
         <p>
@@ -158,3 +158,4 @@ setInterval(crearCorazon,350);
 
 </body>
 </html>
+
