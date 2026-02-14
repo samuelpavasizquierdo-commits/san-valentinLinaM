@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>¿Quieres ser mi San Valentín?</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg,#ff9a9e,#fad0c4);
+    overflow-x:hidden;
+}
+
+.container{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    max-width:500px;
+    width:100%;
+    padding:30px 20px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    position:relative;
+}
+
+h1{
+    color:#ff4b6e;
+    font-size:2.2em;
+    margin-bottom:10px;
+}
+
+h2{
+    color:#444;
+    font-weight:normal;
+    margin-bottom:20px;
+}
+
+p{
+    color:#555;
+    font-size:1.1em;
+    margin-bottom:25px;
+}
+
+button{
+    background:#ff4b6e;
+    color:white;
+    border:none;
+    padding:15px 25px;
+    border-radius:30px;
+    font-size:1.1em;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    background:#ff2f57;
+}
+
+#mensaje{
+    display:none;
+    margin-top:20px;
+    font-size:1.2em;
+    color:#ff4b6e;
+    font-weight:bold;
+}
+
+.corazon{
+    position:fixed;
+    color:#ff4b6e;
+    font-size:20px;
+    animation: flotar 6s linear infinite;
+    opacity:0.7;
+}
+
+@keyframes flotar{
+    from{
+        transform:translateY(100vh) scale(0.5);
+    }
+    to{
+        transform:translateY(-10vh) scale(1.2);
+    }
+}
+
+.fotos{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    margin-bottom:20px;
+}
+
+.fotos img{
+    width:120px;
+    height:150px;
+    object-fit:cover;
+    border-radius:15px;
+    border:3px solid #ff4b6e;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+
+        <h1>Lina Marcela 💖</h1>
+        <h2>Esto es solo para ti</h2>
+
+        <div class="fotos">
+            <!-- Cuando quieras, reemplaza las imágenes por las de ustedes -->
+            <img src="https://via.placeholder.com/300x400.png?text=Nosotros+1">
+            <img src="https://via.placeholder.com/300x400.png?text=Nosotros+2">
+        </div>
+
+        <p>
+            Desde que llegaste a mi vida, todo es más bonito, más tranquilo y más real.
+            No hay palabras que expliquen lo feliz que me haces.
+        </p>
+
+        <button onclick="mostrarMensaje()">¿Quieres ser mi San Valentín? 💌</button>
+
+        <div id="mensaje">
+            ¡Prometo muchos momentos, risas y abrazos contigo! ❤️
+        </div>
+
+    </div>
+</div>
+
+<script>
+function mostrarMensaje(){
+    document.getElementById("mensaje").style.display = "block";
+}
+
+function crearCorazon(){
+    const c = document.createElement("div");
+    c.classList.add("corazon");
+    c.innerHTML = "❤️";
+    c.style.left = Math.random()*100 + "vw";
+    c.style.fontSize = (15 + Math.random()*25) + "px";
+    c.style.animationDuration = (4 + Math.random()*4) + "s";
+    document.body.appendChild(c);
+
+    setTimeout(()=>{ c.remove(); },8000);
+}
+
+setInterval(crearCorazon,350);
+</script>
+
+</body>
+</html>
